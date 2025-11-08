@@ -28,7 +28,7 @@ merged["hour"] = pd.to_datetime(merged["tpep_pickup_datetime"]).dt.hour
 
 merged = merged.dropna(subset=["latitude", "longitude"])
 
-sample_size = 50_000
+sample_size = 100_000
 data = merged.sample(sample_size, random_state=42)
 
 print("Prepared data shape:", data.shape)
@@ -140,4 +140,5 @@ plt.xlabel("Longitude")
 plt.ylabel("Latitude")
 plt.legend()
 plt.savefig("taxi_clusters_map.png", dpi=300)
+
 print("Saved as taxi_clusters_map.png")
